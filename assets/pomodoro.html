@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskCanvas - Pomodoro Timer</title>
+    <link rel="stylesheet" href="pomodoro.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link href="Poppins-Bold.ttf">
+    <link href="Poppins-Regular.ttf">
+</head>
+<body>
+    <header>
+        <h1>TaskCanvas</h1>
+    </header>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Check if the notification prompt has been shown before
+            if (!localStorage.getItem("notificationPrompted")) {
+                // Send a message to the Android app to request notification permission
+                if (typeof Android !== "undefined" && Android.requestNotificationPermission) {
+                    Android.requestNotificationPermission();
+                }
+                // Mark as prompted in local storage
+                localStorage.setItem("notificationPrompted", "true");
+            }
+        });
+    </script>
+    <main class="transition-content">
+     <section class="pomodoro-container">
+        <h2>Pomodoro Timer</h2>
+
+        <div class="timer-display">
+            <span id="minutes">25</span>:<span id="seconds">00</span>
+        </div>
+
+        <!-- Timer control buttons with icons -->
+        <div class="timer-controls">
+            <button id="startBtn" class="button">
+                <i class="fas fa-play"></i>
+            </button>
+            <button id="pauseBtn" class="button">
+                <i class="fas fa-pause"></i>
+            </button>
+            <button id="resetBtn" class="button">
+                <i class="fas fa-redo"></i>
+            </button>
+        </div>
+
+        <!-- Custom timings for focus and break times -->
+        <div class="custom-timer">
+            <h3>Custom Timings</h3>
+            <label for="focusTime">Focus Time (minutes):</label>
+            <input type="number" id="focusTime" min="1" value="25">
+
+            <label for="breakTime">Break Time (minutes):</label>
+            <input type="number" id="breakTime" min="1" value="5">
+        </div>
+
+        <!-- Hidden audio for the alarm sound (hosted locally or from an online source) -->
+        <audio id="alarmSound" src="bell-ringing-05.mp3"></audio>
+    </section>
+   </main>
+
+   <footer>
+       <nav>
+            <a href="index.html" class="nav-item" class="transition-link">
+        <i class="fas fa-tasks"></i>
+    </a>
+    <a href="calendar.html" class="nav-item" class="transition-link">
+        <i class="fas fa-calendar-alt"></i>
+    </a>
+    <a href="pomodoro.html" class="nav-item" class="transition-link">
+        <i class="fas fa-stopwatch"></i>
+    </a>
+       </nav>
+    </footer>
+
+    <script src="pomodoro.js"></script>
+</body>
+</html>

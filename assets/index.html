@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskCanvas - Your Elegant To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link href="Poppins-Bold.ttf">
+    <link href="Poppins-Regular.ttf">
+</head>
+<body>
+    <header>
+        <h1>TaskCanvas</h1>
+    </header>
+
+    <main class="transition-content">
+        <section class="task-input">
+            <h2>Create a Task</h2>
+            <input type="text" id="taskTitle" placeholder="Task Title" maxlength="15">
+            <textarea id="taskInfo" placeholder="Optional Info" maxlength="20"></textarea>
+            <label for="taskColor">Color:</label>
+            <select id="taskColor">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="yellow">Yellow</option>
+                <option value="orange">Orange</option>
+                <option value="purple">Purple</option>
+                <option value="pink">Pink</option>
+                <option value="gray">Gray</option>
+                <option value="teal">Teal</option>
+                <option value="brown">Brown</option>
+            </select>
+                        <label for="taskSchedule">Schedule:</label>
+            <select id="taskSchedule">
+                <option value="daily">Everyday</option>
+                <option value="specific">Specific Date</option>
+                <option value="range">Date Range</option>
+            </select>
+
+            <!-- Hidden by default, visible only when selecting a specific date -->
+            <div id="taskDateContainer" style="display: none;">
+                <label for="taskDate">Task Date:</label>
+                <input type="date" id="taskDate">
+            </div>
+
+            <!-- Hidden by default, visible only when selecting date range -->
+            <div id="rangeDateContainer" style="display: none;">
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate">
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate">
+            </div>
+            <input type="datetime-local" id="taskDate" style="display:none;">
+            <button id="createTaskBtn" class="button"><i class="fas fa-plus"></i> Create Task</button>
+        </section>
+
+        <section class="task-list">
+            <h2>Your Tasks</h2>
+            <div id="taskContainer"></div>
+        </section>
+    </main>
+  
+    <footer>
+       <nav>
+            <a href="index.html" class="nav-item" class="transition-link">
+        <i class="fas fa-tasks"></i>
+    </a>
+    <a href="calendar.html" class="nav-item" class="transition-link">
+        <i class="fas fa-calendar-alt"></i>
+    </a>
+    <a href="pomodoro.html" class="nav-item" class="transition-link">
+        <i class="fas fa-stopwatch"></i>
+    </a>
+       </nav>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

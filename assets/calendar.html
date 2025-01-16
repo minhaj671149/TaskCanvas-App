@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskCanvas - Weekly Calendar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link href="Poppins-Bold.ttf">
+    <link href="Poppins-Regular.ttf">
+</head>
+<body>
+    <header>
+        <h1>TaskCanvas</h1>
+    </header>
+
+    <main class="transition-content">
+        <section class="calendar-navigation">
+            <button id="prevWeekBtn" class="button"><i class="fas fa-chevron-left"></i></button>
+            <h2 id="currentWeek">Week of <span id="weekDate"></span></h2>
+            <button id="nextWeekBtn" class="button"><i class="fas fa-chevron-right"></i></button>
+        </section>
+
+        <section class="weekly-calendar">
+            <div class="calendar-day" id="monday">Monday</div>
+            <div class="calendar-day" id="tuesday">Tuesday</div>
+            <div class="calendar-day" id="wednesday">Wednesday</div>
+            <div class="calendar-day" id="thursday">Thursday</div>
+            <div class="calendar-day" id="friday">Friday</div>
+            <div class="calendar-day" id="saturday">Saturday</div>
+            <div class="calendar-day" id="sunday">Sunday</div>
+        </section>
+    </main>
+
+    <footer>
+       <nav>
+            <a href="index.html" class="nav-item" class="transition-link">
+        <i class="fas fa-tasks"></i>
+    </a>
+    <a href="calendar.html" class="nav-item" class="transition-link">
+        <i class="fas fa-calendar-alt"></i>
+    </a>
+    <a href="pomodoro.html" class="nav-item" class="transition-link">
+        <i class="fas fa-stopwatch"></i>
+    </a>
+       </nav>
+    </footer>
+
+    <script src="calendar.js"></script>
+</body>
+</html>
